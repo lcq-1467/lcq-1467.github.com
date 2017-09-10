@@ -1,0 +1,354 @@
+body{
+	background: url("../image/bg.jpg");
+}
+header{
+	background-color: rgba(0,0,0,0.1);
+	overflow: hidden;
+	text-align: center;
+	width: 100%;
+	position: fixed;
+	top: 0;
+}
+.header-left{
+	/*height: 100%;*/
+	float: left;
+	padding: 5px 20px;
+}
+.header-left img{
+	display:block;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+.header-left img:hover{
+	box-shadow: 0 0 2px 3px rgba(0,0,100,0.5);
+}
+.header-left .resume{
+	/*height: 50px;*/
+	float: left;
+	padding: 0 15px;
+}
+.header-left .resume p:first-child{
+	padding:0 10px 5px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #333;
+}
+.header-left .resume p{
+	font: 14px '微软雅黑';
+}
+
+.header-right{
+	float: right;
+	padding: 5px 30px;
+}
+.header-right li{
+	float: left;
+	margin: 13px 10px 10px;
+	
+}
+.header-right li a{
+	color: #555;
+	font: 16px '微软雅黑';
+	padding: 10px 0;
+	position: relative;
+}
+.header-right li a:after{
+	content:"";
+	display: block;
+	position: absolute;
+	width: 0;
+	left: 8%;
+	right: 0;
+	margin: 5px auto 0;
+	height: 2px;
+	background: #1FAEFF;
+	transition:all .3s ease-in;
+}
+.header-right li a:hover:after{
+	left: 0;
+	width: 100%;
+}
+
+.main{
+	/*min-width: 800px;*/
+	text-align: center;
+}
+.main .header{
+	margin-top: -100px;
+	padding-top: 50px;
+}
+.main  h2{
+	font: bold 26px "宋体";
+	margin-bottom: 8px;
+}
+.main h3{
+	font: 14px  "微软雅黑";
+	color: #501;
+	width: 20%;
+	margin:3px auto;
+	border-top: 2px solid ;
+}
+.main .home{
+	width: 56%;
+	margin:0 auto ;
+}
+.main .home img{
+	width: 17%;
+	border-radius: 50%;
+}
+.main .home h1{
+	margin:20px auto;
+	width: 260px;
+	border-bottom: 2px solid #999;
+	font:bold 18px "宋体";
+	line-height: 40px;
+
+}
+
+.main .home div{
+	font:14px "微软雅黑";
+}
+.main .home div p{
+	padding: 10px;
+}
+
+.main .aboutme{
+	width: 50%;
+	margin:100px auto 0;
+}
+.main .aboutme .ab_count{
+	display: flex;
+	justify-content: space-around;
+	width:500px;
+	margin:20px auto;
+	border-radius:30px;
+	background-color: rgba(0,0,10,0.3);
+}
+.main .aboutme .ab_count .mm{
+	padding: 20px;
+	width: 30%;
+}
+.main .aboutme .ab_count .mm .image{
+	width: 75px;
+	height: 75px;
+	line-height: 76px;
+	border-radius: 50%;
+	border:5px solid white;
+	margin:0 auto;
+}
+.main .aboutme .ab_count .mm .image img{
+	display: inline;
+	vertical-align: middle;
+}
+.main .aboutme .ab_count .mm .image:hover{
+	box-shadow: 0 0 5px 5px rgba(0,0,120,0.6);
+	border-color: black;
+	background-color: white;
+	transition: all .5s ease-out;
+}
+.main .aboutme .ab_count .mm .image:hover img{
+	transform-origin: center center;
+	transform:rotateY(360deg);
+	transition: all .5s linear;
+}
+.main .aboutme .ab_count .mm .mm-count{
+	text-align: left;
+	color: #eee;
+	font-size: 13px;
+	width: 70px;
+	padding: 15px 0 0;
+	margin: 0 auto;
+}
+.main .aboutme .ab_count .mm .mm-count p{
+	text-align: right;
+}
+.main .aboutme .ab_count .mm .mm-count p:before{
+	display: block;
+    content: "";
+    background: #ccc;
+    height: 2px;
+    width: 60px;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+}
+.main .aboutme .ab-info{
+	width: 600px;
+	margin: 30px auto;
+	font: 14px "微软雅黑";
+	position: relative;
+	top:-20px;
+	opacity: 0;
+}
+.main .aboutme .ab-info span:last-of-type{
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 0;
+	right: 0;
+	border-bottom: 2px solid #5686D6;
+	border-right: 2px solid #5686D6;
+} 
+.main .aboutme .ab-info span:first-of-type{
+	display: block;
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	top: 0;
+	left: 0;
+	border-top: 2px solid #5686D6;
+	border-left: 2px solid #5686D6;
+} 
+.main .aboutme .ab-info p{
+	padding: 10px 0;
+}
+
+
+.main .skill{
+	width: 80%;
+	margin: 0px auto;
+}
+.main .skill .skill-info{
+	font:12px "微软雅黑";
+	margin: 35px 0;
+}
+
+.main .skill .skill-list{
+	width:1000px;
+	margin: 0 auto;
+}
+.main .skill .skill-list .ss{
+	transform: scale(0);
+	transition: all .5s ease-out;
+}
+.main .skill .skill-list{
+	display: flex;
+	justify-content: space-around;
+}
+.main .skill .skill-list>li{
+	width: 90px;
+	padding: 0 10px;
+}
+.main .skill .skill-list .skill-title{
+	text-align: center;
+	font: 20px "微软雅黑";
+
+}
+.main .skill .skill-list ul img{
+	display: block;
+	margin: 0 auto;
+}
+.main .skill .skill-list .skill-content{
+	position: absolute;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	background-color: rgba(0,0,0,0.2);
+	font:bold 13px "微软雅黑";
+	list-style: disc inside;
+	width: 270px;
+	padding: 10px;
+	border-radius: 15px;
+	text-align: left;
+	transform: translateX(-90px);
+}
+.triangle{
+	width: 0;
+	margin: 15px auto;
+	border-top: 30px solid black;
+	border-bottom: 0;
+	border-left: 15px  solid transparent;
+	border-right: 15px  solid transparent;
+	transform: rotateZ(180deg);
+}
+.main .skill .skill-list>li:hover .skill-content{
+	height: 75px;
+	visibility: visible;
+	transition: all .3s linear;
+}
+.main .skill .skill-list>li:hover .triangle{
+	transform: rotateZ(0deg);
+	transition: all .1s linear;
+}
+
+
+.main .productor{
+	width: 70%;
+	margin: 0 auto ;
+}
+
+.main .productor .pro-list{
+	display: flex;
+	justify-content: space-around;
+	margin: 50px 0 0;
+}
+.main .productor .pro-list li{
+	width: 100px;
+	height: 100px;
+	padding: 30px;
+	border:1px solid #aaa;
+	position: relative;
+}
+.main .productor .pro-list li span{
+	display: block;
+	width: 0%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	opacity: 0.4;
+	background-color: rgba(100,10,10,0.4);
+}
+.main .productor .pro-list li:hover span{
+	width: 100%;
+	left: 0;
+	transition: all .5s linear;
+}
+
+#fp-nav ul li .fp-tooltip{
+	color: black;
+}
+
+.main .contact{
+	width: 70%;
+	margin: 0 auto;
+}
+.main .contact .contact-cont{
+	width: 80%;
+	margin: 40px auto 0;
+	display: flex;
+	justify-content: space-around;
+}
+.main .contact .contact-cont .form{
+	width: 400px;
+	height: 300px;
+	padding: 20px 0;
+	font:18px "微软雅黑";
+	background-color: rgba(100,100,100,.6);
+	border-radius: 5px;
+	box-shadow: 0 0 3px 5px rgba(220,220,220,1);
+}
+input{
+	width: 300px;
+	height: 30px;
+}
+textarea{
+	width: 300px;
+	height: 100px;
+	margin:0 0 10px;
+}
+.main .contact .contact-cont .mycont{
+	width: 200px;
+	height: 260px;
+	font:18px "微软雅黑";
+}
+.main .contact .contact-cont .mycont h1{
+	padding: 30px;
+}
+
+/*动画标签*/
+.move{
+	position: relative;
+	top: 20px;
+	opacity: 0;
+}
