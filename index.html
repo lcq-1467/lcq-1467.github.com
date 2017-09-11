@@ -7,6 +7,8 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.js"></script> -->
+
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/move.js/0.5.0/move.min.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.js"></script>
 	<link rel="stylesheet" href="css/index.css">
@@ -197,16 +199,17 @@
 			<div class="contact-cont">
 				<div class="form">
 					<h4 style="margin:0 0 10px;">您的联系方式</h4>
-					<form action="#" >
+					<div >
 						<label for="tel">电话:</label>
-						<input type="text" name="tel"><br><br>
+						<input type="text" name="tel" id="tel"><br><br>
 						<label for="tel">邮箱:</label>
-						<input type="text" name="emil"><br><br>
+						<input type="text" name="emil" id="email"><br><br>
 						<label for="area" style="vertical-align: top;">地址:</label>
-						<textarea name="area" id="" cols="30" rows="10"></textarea><br>
-						<input type="submit" value="发送" style="width: 80px;height: 30px;">
+						<textarea name="area" id="area" cols="30" rows="10"></textarea><br>
+						<input id="save" type="submit" value="发送" style="width: 80px;height: 30px;">
 						<input type="reset" style="width: 80px;height: 30px;margin-left: 10px;">
-					</form>
+					</div>
+					<p id="savesu"></p>
 				</div>
 				<div class="mycont">
 					<h1>我的联系方式</h1>
@@ -239,7 +242,34 @@
     });
     return this;
 	};
-		$(function(){
+$(function(){
+
+	
+	$("#save").click(function(){ 
+		$.ajax({ 
+		    type: "POST", 	
+			url: "serverjsonp.php",
+			data: {
+				tel: $("#tel").val(), 
+				email: $("#email").val(), 
+				area: $("#area").val()
+			},
+			dataType: "json",
+			success: function(data){
+				if (data.success) { 
+					$("#savesu").html(data.msg);
+				} else {
+					$("#savesu").html("出现错误：" + data.msg);
+				}  
+			},
+			error: function(jqXHR){     
+			   alert("发生错误：" + jqXHR.status);  
+			},     
+		});
+	});
+
+
+
 
 			$('#fullpage').fullpage({
 				anchors:['home','aboutme','skill','productor','contact'],
