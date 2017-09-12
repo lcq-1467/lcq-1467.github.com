@@ -1,0 +1,316 @@
+/*导航子集*/
+nav i{
+	display: inline-block;
+	width: 0;
+	border: 6px solid ;
+	border-color:#666 transparent transparent;
+	position: absolute;
+	margin: 18px 0;
+}
+
+/*浮动特效*/
+.fu-1{
+	position: relative;
+	top: 10px;
+	opacity: 0;
+}
+.fu-2{
+	position: relative;
+	top: -10px;
+	opacity: 0;
+}
+.fu-3{
+	position: relative;
+	left: -20px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+.fu-4{
+	position: relative;
+	right: -20px;
+	opacity: 0;
+}
+.fu-5{
+	position: relative;
+	left: -20px;
+	opacity: 0;
+}
+
+/*导航*/
+/*导航*/
+nav{
+	position: fixed;
+	top: 0;left:0;right: 0;
+	padding: 10px 50px;
+	background: white;
+	height: 45px;
+	z-index: 100;
+}
+nav img{
+	height: 70%;
+	vertical-align: bottom;
+}
+nav .nav{
+	float: right;
+}
+nav .nav>li{
+	padding: 0 20px;
+	float: left;
+	line-height: 45px;
+	position: relative;
+}
+nav .nav li>a{
+	color: black;
+	font:15px '微软雅黑';
+}
+nav .nav li:hover>a{
+	color: #02bdd5;
+}
+nav .nav .n-a{
+	position: absolute;
+	padding: 0 6px;
+	width: 160px;
+	line-height: 30px;
+	opacity: 0;
+	visibility: hidden;
+	background: black;
+	transition: transform 0.5s;
+}
+nav .nav .n-a a{
+	color: white;
+	font-size: 12px ;
+}
+
+/*头部*/
+header{
+	margin-top: 40px;
+	text-align: center;
+	padding: 50px 100px;
+	background: #02bdd5;
+	color: white;
+	min-width: 800px;
+}
+
+header h1{
+	font:bold 30px/2 '微软雅黑';
+	color: white;
+	margin-bottom: 15px;
+}
+header span i{
+	background: url(../images/0601.png) no-repeat;
+	display:inline-block;
+	width: 20px;height: 15px;
+}
+header span a{
+	font:bold 16px '微软雅黑';
+	color: white;
+}
+.main{
+	min-width: 800px;
+	padding:100px;
+	background: white;
+	border: 1px solid;
+}
+section{
+	padding: 50px 100px;
+	min-width: 800px;
+	overflow: hidden;
+}
+
+section img{
+	width: 45%;
+	display: block;
+	float: left;
+}
+
+section article{
+	width:50%;
+	float: right;
+}
+section article h1{
+	font:bold 26px '微软雅黑';
+	margin-bottom: 20px;
+}
+section article p{
+	font: 16px/1 '微软雅黑';
+	color: #666;
+	margin-top: 10px;
+}
+
+
+.choose{
+	display: flex;
+	position: relative;
+	left: 0;right:0;
+	min-width: 1000px;
+	font:16px/1.2 '微软雅黑';
+	overflow: hidden;
+	justify-content:space-around;
+}
+.choose .ca{
+	width: 400px;
+	height: 200px;
+	padding: 70px 50px;
+	color: white;
+}
+.choose .ca h1{
+	font:30px '微软雅黑';
+	margin-bottom: 20px;
+}
+.choose .ca p{
+	font:1em/1.2 '微软雅黑';
+}
+.choose .ca:nth-child(1){
+	background: #02bdd5;
+}
+.choose .ca:nth-child(2){
+	background: #01b0c7;
+}
+.choose .ca:nth-child(3){
+	background: #01a6bb;
+}
+/*团队*/
+.tema{
+	padding: 50px 100px;
+	min-width: 800px;
+}
+.tema-main{
+	display: flex;	
+	justify-content:space-around;
+	box-sizing: border-box;
+}
+.tema h1{
+	font:27px '微软雅黑';
+	text-align: center;
+	margin: 50px 0;
+}
+.tema-main .ta{
+	width: 23%;
+}
+.tema-main .ta h2{
+	padding-bottom: 10px;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+.tema-main .ta h2>.s-m{
+	position: absolute;
+	border-radius: 10%;
+	background: rgba(0,0,0,.3);
+	top:80%;left: 0;
+}
+.tema-main .ta h2 .s1{
+	font:bold 18px/1.2 '微软雅黑';
+	color: #02bdd5;
+}
+.tema-main .ta h2 .s2{
+	font:bold 14px/1.2 serif;
+	color: #ddd;
+}
+.tema-main .ta h2 p{
+	font:bold 13px/1.2 'Adobearabic',serif;
+	padding: 20px 0;
+	color: #ddd;
+}
+.tema-main .ta h2>img{
+	width: 100%;
+}
+.tema-main .ta .fx{
+	margin:15px 0;
+}
+.tema-main .ta .fx img{
+	width: 12%;
+}
+
+
+/*客户*/
+.clients{
+	padding:50px 100px;
+	text-align: center;
+	min-width: 800px;
+}
+.clients h1{
+	font:bold 20px '微软雅黑';
+}
+.clients p{
+	font:16px '微软雅黑';
+	color: #666;
+	padding: 20px 0;
+}
+.clients .gund-cimg{
+	overflow: hidden;
+}
+.clients .cimg{
+	display: flex;
+	position: relative;
+	top: 0;left: 0%;
+	width: 200%;
+	justify-content: space-between;
+	margin: 0 auto;
+	width
+}
+.clients .cimg img{
+	/*display: block;*/
+	width: 9%;
+}
+
+
+/*建议*/
+.ythink{
+	padding: 50px 100px;
+	min-width: 800px;
+	background: #02bdd5;
+	text-align: center;
+}
+.ythink h1{
+	font: 30px/2 '微软雅黑';
+	color: #fff;
+}
+.ythink p{
+	font: 15px '微软雅黑';
+	color: #fff;
+	padding:0 150px;
+}
+.ythink .contact{
+	width: 150px;
+	line-height: 50px;
+	background: #fff;
+	color: #02bdd5;
+	font-size: 16px;
+	display: inline-block;
+	margin-top: 30px;
+	cursor: pointer;
+}
+.ythink .contact a{
+	color: #02bdd5;
+}
+
+footer{
+	padding: 30px;
+	min-width: 940px;
+	background: #fff;
+	overflow: hidden;
+}
+footer h3{
+	float: left;
+	font:14px '微软雅黑';
+	color: #666;
+	line-height: 30px;
+}
+footer .fx{
+	float: right;
+	margin-right: 100px;
+	overflow: hidden;
+	/*font:14px '微软雅黑';*/
+	/*border: 1px solid;*/
+}
+footer .fx li{
+	float: left;
+	margin-right: 10px;
+	width: 30px;
+	height: 30px;
+}
+footer .fx li img{
+	vertical-align: top;
+	width: 100%;
+}

@@ -1,0 +1,306 @@
+/*导航子集*/
+nav i{
+	display: inline-block;
+	width: 0;
+	border: 6px solid ;
+	border-color:#666 transparent transparent;
+	position: absolute;
+	margin: 18px 0;
+}
+body{
+	min-width: 800px;
+}
+
+/*浮动特效*/
+.fu-1{
+	position: relative;
+	top: 20px;
+	opacity: 0;
+}
+.fu-2{
+	position: relative;
+	top: -10px;
+	opacity: 0;
+}
+.fu-3{
+	position: relative;
+	left:-30px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+.fu-4{
+	position: relative;
+	right: -20px;
+	opacity: 0;
+}
+.fu-5{
+	position: relative;
+	left: -20px;
+	opacity: 0;
+}
+.fu-6{
+	position: relative;
+	top: -80px;
+	opacity: 0;
+}
+
+/*导航*/
+/*导航*/
+nav{
+	position: fixed;
+	top: 0;left:0;right: 0;
+	padding: 10px 50px;
+	background: white;
+	height: 45px;
+	z-index: 100;
+}
+nav img{
+	height: 70%;
+	vertical-align: bottom;
+}
+nav .nav{
+	float: right;
+}
+nav .nav>li{
+	padding: 0 20px;
+	float: left;
+	line-height: 45px;
+	position: relative;
+}
+nav .nav li>a{
+	color: black;
+	font:15px '微软雅黑';
+}
+nav .nav li:hover>a{
+	color: #02bdd5;
+}
+nav .nav .n-a{
+	position: absolute;
+	padding: 0 6px;
+	width: 160px;
+	line-height: 30px;
+	opacity: 0;
+	visibility: hidden;
+	background: black;
+	transition: transform 0.5s;
+}
+nav .nav .n-a a{
+	color: white;
+	font-size: 12px ;
+}
+
+/*头部*/
+header{
+	margin-top: 40px;
+	text-align: center;
+	padding: 50px 100px;
+	background: #02bdd5;
+	color: white;
+	min-width: 800px;
+}
+
+header h1{
+	font:bold 30px/2 '微软雅黑';
+	color: white;
+	margin-bottom: 15px;
+}
+header span i{
+	background: url(../images/0601.png) no-repeat;
+	display:inline-block;
+	width: 20px;height: 15px;
+}
+header span a{
+	font:bold 16px '微软雅黑';
+	color: white;
+}
+
+.message{
+	padding: 100px;
+	min-width: 800px;
+	display: flex;
+	justify-content: space-between;
+}
+.message .m-left{
+	width: 49%;
+}
+
+.message .m-left h1{
+	font:25px '微软雅黑';
+	color: #666;
+}
+.message .m-left p{
+	font-size:12px ;
+	color: #444;
+	margin-bottom: 20px;
+}
+.message .m-left form{
+	position: relative;
+}
+.message .m-left form input{
+	width: 98%;
+	height: 35px;
+	/*margin: 15px 0;*/
+}
+
+.message .m-left form span{
+	display: inline-block;
+	position: relative; 
+	font-size: 12px;
+	line-height: 30px;
+	color: #888;
+	left:10px;
+}
+.message .m-left form .ts{
+	visibility: hidden;
+}
+.message .m-left form .ets{
+	position:absolute; 
+	color: #f66;
+	visibility: hidden;
+}
+.message .m-left form .tts{
+	position:absolute; 
+	color: #f66;
+	visibility: hidden;
+}
+
+
+
+.message .m-left form .address{
+	width: 100%;
+	height: 30px;
+	color: #666;
+	margin: 10px 0;
+}
+.message .m-left form .address select{
+	margin:0 10px ;
+	color: #666;
+}
+.message .m-left form textarea{
+	width: 98%;
+}
+.message .m-left form button{
+	width:150px;
+	height: 35px;
+	margin: 20px 0; 
+	background: #02bdd5;
+	border: 0;
+	color: white;
+	font:16px '微软雅黑';
+}
+.message .m-right{
+	width: 49%;
+}
+.message .m-right h1{
+	font:25px '微软雅黑';
+	color: #666;
+}
+.message .m-right p{
+	font-size:12px ;
+	color: #444;
+	margin-bottom: 20px;
+}
+.message .m-right .media{
+	width: 100%;
+	height: 400px;
+	background: #aaa;
+}
+/*提交成功*/
+.cgts{
+	width: 50%;
+	height: 60%;
+	text-align: center;
+	display: none;
+	opacity: 0;
+	background:radial-gradient(circle at center,rgba(100,100,256,.9),rgba(100,100,256,.7),rgba(100,100,256,.5),rgba(100,100,256,.3)) ;
+	position: fixed;
+	top: 20%;left: 25%;
+	z-index: 10;
+	font:50px '微软雅黑';
+	color: red;
+}
+.cgts i{
+	width: 0;
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+
+
+
+
+
+.way{
+	padding: 0px 100px 100px;
+	min-width: 800px;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+}
+.way .way-c{
+	width: 17%;
+	background: rgba(200,200,200,.2);
+	padding: 30px;
+	font:14px '微软雅黑';
+}
+
+/*建议*/
+.ythink{
+	padding: 50px 100px;
+	min-width: 800px;
+	background: #02bdd5;
+	text-align: center;
+}
+.ythink h1{
+	font: 30px/2 '微软雅黑';
+	color: #fff;
+}
+.ythink p{
+	font: 15px '微软雅黑';
+	color: #fff;
+	padding:0 150px;
+}
+.ythink .contact{
+	width: 150px;
+	line-height: 50px;
+	background: #fff;
+	color: #02bdd5;
+	font-size: 16px;
+	display: inline-block;
+	margin-top: 30px;
+	cursor: pointer;
+}
+.ythink .contact a{
+	color: #02bdd5;
+}
+
+footer{
+	padding: 30px;
+	min-width: 940px;
+	background: #fff;
+	overflow: hidden;
+}
+footer h3{
+	float: left;
+	font:14px '微软雅黑';
+	color: #666;
+	line-height: 30px;
+}
+footer .fx{
+	float: right;
+	margin-right: 100px;
+	overflow: hidden;
+	/*font:14px '微软雅黑';*/
+	/*border: 1px solid;*/
+}
+footer .fx li{
+	float: left;
+	margin-right: 10px;
+	width: 30px;
+	height: 30px;
+}
+footer .fx li img{
+	vertical-align: top;
+	width: 100%;
+}

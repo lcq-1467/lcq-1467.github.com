@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:1100px;
+			height: 80px;
+			line-height: 80px;
+			margin: 100px auto 20px;
+			text-align: center;
+			border: 1px solid;
+			font: 40px "微软雅黑";
+		}
+		input{
+			width: 400px;
+			height: 30px;
+			margin-left: 400px;
+		}
+	</style>
+</head>
+
+<body>
+	<div><span style="line-height: 80px;"></span></div>
+	<input type="text" value="">
+	<button style="margin-right: 20px;">确定</button>
+	<button>开始</button>
+	<button>暂停</button>
+<h1 style="text-align: center;">用户可以随机并输入任意时间格式且要带时间单位(例:X年,X月,X号,X时,X分)</h1>
+<h2 style="text-align: center;">默认时间以输入日期0时0分倒计(例:11号,默认为11号0时0分)</h2>
+
+
+<script>
+	window.onload=function(){
+		var div=document.getElementsByTagName("div");
+		var button=document.getElementsByTagName("button");
+		var input=document.getElementsByTagName("input");
+		var span=document.getElementsByTagName("span");
+		var cc;	
+		var bb;
+		
+	button[0].onclick=function(){
+		bb=b();
+		console.log(bb);
+		cc=setInterval(a,1000);
+	}
+	button[1].onclick=function(){
+		clearInterval(cc);
+	 cc=setInterval(a,1000);
+	}
+	button[2].onclick=function(){
+		clearInterval(cc);
+	}
+
+////匹配筛选出用户输入的时间数据
+	function b(){
+		var rr0,rr1,rr2,rr3,rr4;
+		////获取当前时间,作为未输入的默认计时依据
+			var dd = new Date();
+				var y = dd.getFullYear();
+				var m = dd.getMonth()+1;
+				var d = dd.getDate();
+				var h = dd.getHours();
+				var f = dd.getMinutes();
+
+				///筛选输入的日期时间
+				var str=input[0].value;
+
+				var reg0=/\d+[年]/g;
+				var reg1=/\d+[月]/g;
+				var reg2=/\d+[号]/g;
+				var reg3=/\d+[时]/g;
+				var reg4=/\d+[分]/g;
+				var rr0,rr1,rr2,rr3,rr4;
+			////年	
+			if(str.match(reg0)==null){
+				  rr0=y+"年";
+			}else{
+				  rr0=str.match(reg0)[0];
+			}
+			///月
+			if(str.match(reg1)==null&&str.match(reg0)!=null){
+				  rr1=1+"月";
+			}else if(str.match(reg1)==null&&str.match(reg0)==null){
+				  rr1=m+"月";
+			}
+			else{
+				  rr1=str.match(reg1)[0];
+			}
+			///号
+			if(str.match(reg2)==null&&str.match(reg1)==null&&str.match(reg0)!=null){
+				  rr2=0+"号";
+			}else if(str.match(reg2)==null&&str.match(reg1)!=null){
+				  rr2=0+"号";
+			}else if(str.match(reg2)==null){
+				  rr2=d+"号";
+			}
+			else{
+				  rr2=str.match(reg2)[0];
+			}
+			///时
+			if(str.match(reg3)==null&&str.match(reg4)!=null){
+				  rr3=h+"时";
+			}
+			else if(str.match(reg3)==null&&str.match(reg4)==null){
+				  rr3=0+"时";
+			}
+			else{
+				  rr3=str.match(reg3)[0];
+			}
+			///分
+			if(str.match(reg4)==null){
+				  rr4=0+"分";
+			}else{
+				  rr4=str.match(reg4)[0];
+			}
+
+
+				// var  rr0=str.match(reg0)[0];
+				// var  rr1=str.match(reg1)[0];
+				// var  rr2=str.match(reg2)[0];
+				// var  rr3=str.match(reg3)[0];
+				// var  rr4=str.match(reg4)[0];
+
+
+				
+				var zz=[];
+
+				 zz[0]=rr0.slice(0,rr0.length-1);
+				 zz[1]=parseInt(rr1.slice(0,rr1.length-1))-1;
+				 zz[2]=rr2.slice(0,rr2.length-1);
+				 zz[3]=rr3.slice(0,rr3.length-1);
+				 zz[4]=rr4.slice(0,rr4.length-1);
+		  return zz;
+
+	}
+
+	function a(){
+		
+		
+	////传入时间数据;
+			var date=new Date();
+
+			var   b0=bb[0];
+			var   b1=bb[1];
+			var   b2=bb[2];
+			var   b3=bb[3];
+			var   b4=bb[4];
+
+			var nt=new Date(b0,b1,b2,b3,b4);
+
+			var timer=Math.floor((nt-date)/1000);
+			if(nt-date<0){
+				return span[0].innerHTML="0天0时0分0秒";
+			}
+			var day=Math.floor(timer/3600/24);
+			var hours=(Math.floor(timer/3600))%24;
+			var minute=(Math.floor(timer/60))%60;
+			var second=(Math.floor(timer%60));	
+			span[0].innerHTML=num(day)+"天"+num(hours)+"时"+num(minute)+"分"+num(second)+"秒";		
+		}
+
+	}
+	function num(num){
+
+		if(num<10){
+			return "0"+num;
+		}	
+		else{
+			return num;
+		}
+	}
+
+</script>
+</body>
+</html>

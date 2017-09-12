@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='./jss/my.js'></script>
+
+	<style>
+	.main{
+		width: 300px;
+		height: 100px;
+		background: yellow;
+		margin:50px;
+		opacity: 0.6;
+	}
+	</style>
+</head>
+<body>
+	<div class="main a"></div>
+	<div class="main b"></div>
+	<div class="main c"></div>
+<script>
+	var main=my('.main');
+		for(var i=0;i<main.length;i++){
+			main[i].timer=null;
+			main[i].onmouseover=function(){
+				css(this,{'width':'400px','height':'200px'});
+				
+			};
+			main[i].onmouseout=function(){
+				move(this,{'width':300,'height':100});
+			};
+		}
+var a= {x:100};
+function test (a){
+　　a++; 　　//修改参数对象a.x的值，函数外定义的a也将会被修改;对象属性的变量相当于指针
+console.log(a);
+}
+test(a.x); 　　
+console.log(a.x); 　　 // //第一个返回101;第二个101;
+</script>
+
+</body>
+</html>
